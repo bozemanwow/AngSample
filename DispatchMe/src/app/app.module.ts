@@ -1,3 +1,4 @@
+import { JobsServiceService } from './services/jobs-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ViewChild } from '@angular/core';
 
@@ -25,7 +26,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyChDgQZE7cX-u0QqdF92m6m8leel6Je5FU'})
 
   ],
-  providers: [],
+  providers: [JobsServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
