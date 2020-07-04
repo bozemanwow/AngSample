@@ -1,3 +1,4 @@
+import { MapPointsServicesService } from './../../services/map-points-services.service';
 import { Component, OnInit } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 
@@ -10,9 +11,10 @@ export class MapDisplayComponent implements OnInit {
   title = 'angulargooglemap';
   lat = 43.653908;
   lng = -79.384293;
-  constructor() { }
+  constructor(private mapSer: MapPointsServicesService) { }
 
   ngOnInit(): void {
+
   }
 
 }
