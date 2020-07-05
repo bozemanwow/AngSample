@@ -8,13 +8,21 @@ import { Subject } from 'rxjs';
 })
 export class MapPointsServicesService  {
 
-  MainPoint = new Subject<Job>();
-  selectedJob: Job;
+  private MainPoint = new Subject<Job>();
+  private selectedJob: number;
   constructor(private jobsSer: JobsServiceService) { }
 
-  setJobPoint(index: number)
+  public setJobPoint(index: number)
   {
-    this.selectedJob = this.jobsSer.getJob(index);
-    this.MainPoint.next(this.selectedJob);
+    this.selectedJob = index;
+    this.MainPoint.next(this.getSelectedJob());
   }
+  public getSelectedJob()
+  {
+    return this.jobsSer.getJob(this.selectedJob);
+  }
+  public selectedSub(){
+    return this.MainPoint;
+  }
+
 }
