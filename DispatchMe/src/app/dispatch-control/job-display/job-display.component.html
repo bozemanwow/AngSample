@@ -1,3 +1,8 @@
 <div>job-display works!</div>
 <div>User</div>
-<app-jobitem *ngFor="let job  of jobs; let i = index" [jobItem]="job" (click)="selectPoint(i);"></app-jobitem>
+<cdk-virtual-scroll-viewport itemSize="5">
+ <span  *ngFor="let job  of jobs; let i = index">
+  <app-jobitem [jobItem]="job" (click)="selectPoint(i);"></app-jobitem>
+ </span>
+</cdk-virtual-scroll-viewport>
+<!--  -->

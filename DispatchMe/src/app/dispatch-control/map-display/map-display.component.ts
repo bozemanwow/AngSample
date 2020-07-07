@@ -25,7 +25,7 @@ export class MapDisplayComponent implements OnInit, OnDestroy {
         this.lng = +mJob.long;
         this.title = mJob.name;
       }
-    )
+    );
   }
 
 }
