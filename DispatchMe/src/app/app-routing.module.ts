@@ -1,7 +1,7 @@
-import { JobListControlComponent } from './JobControl/job-list-control/job-list-control.component';
-import { DispatchControlComponent } from './dispatch-control/dispatch-control.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DispatchControlComponent } from './dispatch-control/dispatch-control.component';
+import { JobListControlComponent } from './JobControl/job-list-control.component';
 
 
 const routes: Routes = [

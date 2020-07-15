@@ -1,1 +1,38 @@
-<p>job-from-display-control works!</p>
+<div class="row">
+  <div class="col-xs-8">
+    <form [formGroup] = "jobForm" (ngSubmit)="onSubmit()" >
+      <div class="row">
+        <div class="col-xs-12">
+          <button [disabled]="!jobForm.valid" type="submit" class="btn btn-success">Save</button>
+          <button type="button" class="btn btn-success" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+          <label for="name">Company</label>
+          <input type="text" id="name" class="form-control" formControlName="name">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+        <label for="lat">lat</label>
+        <input type="number" id="lat" class="form-control" formControlName="lat">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+      <label for="long">long</label>
+      <input type="number" id="long" class="form-control" formControlName="long">
+    </div>
+  </div>
+</div>
+
+
+    </form>
+  </div>
+</div>

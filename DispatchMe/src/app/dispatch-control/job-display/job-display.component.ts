@@ -12,7 +12,7 @@ import { MapPointsServicesService } from 'src/app/services/map-points-services.s
 export class JobDisplayComponent implements OnInit, OnDestroy {
 jobs: Job[];
 jobSubs: Subscription;
-  constructor(private jobsSer: JobsServiceService, private mapSer:MapPointsServicesService) {
+  constructor(private jobsSer: JobsServiceService, private mapSer: MapPointsServicesService) {
 
   }
   ngOnDestroy(): void {
@@ -23,10 +23,10 @@ jobSubs: Subscription;
     this.jobSubs = this.jobsSer.jobsChanged.subscribe(
       (jobs: Job[]) => {
         this.jobs = jobs;
-        console.log("Jobs Loaded");
+        console.log('Jobs Loaded');
       }
     );
-    
+
     this.jobs = this.jobsSer.getJobs();
   }
   selectPoint(i: number)

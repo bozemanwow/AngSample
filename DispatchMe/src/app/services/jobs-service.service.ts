@@ -7,21 +7,10 @@ import { Subject } from 'rxjs';
 })
 export class JobsServiceService {
   jobsChanged = new Subject<Job[]>();
-  private jobs: Job[] = [ new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Original Vincent\'s New York Style Pizza', '3:00pm', '27.449845836867976', '-81.42015264741083'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
-  new Job('Sebring Golf Course', '12:30pm', '27.469190662588694', '-81.47010610810553'),
+  jobSelected = new Subject<number>();
+  private jobs: Job[] = [ new Job('Sebring Golf Course', '27.469190662588694', '-81.47010610810553'),
+  new Job('Original Vincent\'s New York Style Pizza',  '27.449845836867976', '-81.42015264741083'),
+  new Job('Sample Date',  '22', '22')
 ];
   constructor() { }
 
@@ -56,5 +45,8 @@ export class JobsServiceService {
     this.jobs.splice(index, 1);
     this.updateSubs();
   }
-
+  selectJob(index: number)
+  {
+    this.jobSelected.next(index);
+  }
 }

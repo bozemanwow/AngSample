@@ -1,1 +1,6 @@
-<p>job-list-display-control works!</p>
+<cdk-virtual-scroll-viewport itemSize="5">
+  <span  *ngFor="let job  of jobs; let i = index">
+   <app-jobitem [jobItem]="job" (click)="selectPoint(i);"></app-jobitem>
+
+  </span>
+ </cdk-virtual-scroll-viewport>
